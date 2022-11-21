@@ -1,15 +1,14 @@
 %global uuid pomodoro@arun.codito.in
-%global gittag %{version}
 
 Epoch:          1
 Name:           gnome-pomodoro
 Version:        0.22.0
-Release:        1%{?dist}
+Release:        1
 Summary:        A time management utility for GNOME
 
 License:        GPLv3+
 URL:            https://gnomepomodoro.org/
-Source0:        https://github.com/gnome-pomodoro/gnome-pomodoro/archive/%{gittag}.tar.gz
+Source0:        https://github.com/gnome-pomodoro/gnome-pomodoro/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  meson
 BuildRequires:  gcc
@@ -61,9 +60,6 @@ rm %{buildroot}%{_libdir}/lib%{name}.so
 
 %find_lang %{name}
 
-%check
-desktop-file-validate %{buildroot}/%{_datadir}/applications/org.gnome.Pomodoro.desktop
-appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/*/org.gnome.Pomodoro.appdata.xml
 
 %files -f %{name}.lang
 %doc README.md NEWS
