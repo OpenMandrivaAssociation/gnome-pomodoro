@@ -46,7 +46,7 @@ This GNOME utility helps to manage time according to Pomodoro Technique.
 It intends to improve productivity and focus by taking short breaks.
 
 %prep
-%autosetup -n gnome-pomodoro-%{gittag}
+%autosetup -n gnome-pomodoro-%{version}
 
 %build
 %meson
