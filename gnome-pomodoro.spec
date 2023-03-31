@@ -3,7 +3,7 @@
 Epoch:          1
 Name:           gnome-pomodoro
 Version:        0.22.1
-Release:        1
+Release:        2
 Summary:        A time management utility for GNOME
 
 License:        GPLv3+
