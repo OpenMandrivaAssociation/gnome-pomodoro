@@ -1,3 +1,5 @@
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types
+
 %global uuid pomodoro@arun.codito.in
 
 Epoch:          1
