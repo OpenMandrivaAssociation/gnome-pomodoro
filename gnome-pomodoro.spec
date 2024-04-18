@@ -4,7 +4,7 @@
 
 Epoch:          1
 Name:           gnome-pomodoro
-Version:        0.24.1
+Version:        0.25.1
 Release:        1
 Summary:        A time management utility for GNOME
 
