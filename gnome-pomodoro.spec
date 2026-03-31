@@ -2,15 +2,15 @@
 
 %global uuid pomodoro@arun.codito.in
 
-Epoch:          1
-Name:           gnome-pomodoro
-Version:        0.28.1
+Name:           FocusTimer
+Version:        1.0
 Release:        1
 Summary:        A time management utility for GNOME
 
 License:        GPLv3+
 URL:            https://gnomepomodoro.org/
-Source0:        https://github.com/gnome-pomodoro/gnome-pomodoro/archive/%{version}/%{name}-%{version}.tar.gz
+#Source0:        https://github.com/gnome-pomodoro/gnome-pomodoro/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/focustimerhq/FocusTimer/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  meson
 BuildRequires:  gcc
@@ -25,7 +25,7 @@ BuildRequires:  pkgconfig(gio-2.0)
 BuildRequires:  pkgconfig(gtk+-3.0)
 BuildRequires:  pkgconfig(gdk-pixbuf-2.0)
 BuildRequires:  pkgconfig(gobject-introspection-1.0)
-BuildRequires:  pkgconfig(libpeas-1.0)
+BuildRequires:  pkgconfig(libpeas-2)
 BuildRequires:  pkgconfig(gom-1.0)
 BuildRequires:  pkgconfig(gstreamer-1.0)
 BuildRequires:  pkgconfig(appstream-glib)
@@ -40,15 +40,17 @@ Requires:       hicolor-icon-theme
 Requires:       dbus-common
 
 # Provides/Obsoletes added in F35 due to package rename
-Provides:       gnome-shell-extension-pomodoro = %{epoch}:%{version}-%{release}
+Provides:       gnome-shell-extension-pomodoro = %{version}-%{release}
 Obsoletes:      gnome-shell-extension-pomodoro < 1:0.19.2-1
+Provides: FocusTimer = %{EVRD}
+%rename gnome-pomodoro
 
 %description
 This GNOME utility helps to manage time according to Pomodoro Technique.
 It intends to improve productivity and focus by taking short breaks.
 
 %prep
-%autosetup -n gnome-pomodoro-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 %meson
